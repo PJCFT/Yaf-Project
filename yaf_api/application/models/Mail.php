@@ -52,12 +52,12 @@ class MailModel {
         }
         //设置邮箱发送信息
         $mail = new Message();
-        $mail->setFrom('2398720780@qq.com')->addTo($userEmail)->setSubject($title)->setBody($contents);
+        $mail->setFrom('example@qq.com')->addTo($userEmail)->setSubject($title)->setBody($contents);//设置邮件发送的格式，包括发件人，收件人，标题，和内容
         //邮件发送者信息配置
         $mailer = new Nette\Mail\SmtpMailer([
-            'host'=>'smtp.qq.com',
-            'username'=>'2398720780@qq.com',//smtp username
-            'password'=>'omxblkixwvuudhif',//smtp password
+            'host'=>'smtp.qq.com',//smtp host发送邮件的主机
+            'username'=>'example@qq.com',//smtp username
+            'password'=>'password',//smtp password
             'secure'=>'ssl'
         ]);
         $mailer->send($mail);
